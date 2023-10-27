@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argo-load-managed-cluster-scale-test-cm
+  labels:
+    app.kubernetes.io/managed-by: codefresh
+data: 
+  managed-by-runtime: argo-load

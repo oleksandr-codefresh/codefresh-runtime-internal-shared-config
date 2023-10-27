@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: scale-test-rollouts
+  labels:
+    codefresh.io/entity: component
+    codefresh.io/internal: "false"
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    chart: argo-rollouts
+    repoURL: https://codefresh-io.github.io/argo-helm
+    targetRevision: 2.22.1-1-cap-sw
+    helm:
+      releaseName: argo-rollouts
+  destination:
+    namespace: default
+    server: https://401EF9FECDBD2C7BEAC3049BE9E27803.gr7.us-east-1.eks.amazonaws.com
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true

@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/argo-load/*.yaml,runtimes/argo-load/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,argo-load/yarik-scale-test.yaml,argo-load/scale-test-rollouts.yaml,argo-load/scale-test-rollout-reporter.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/argo-load/*.yaml,runtimes/argo-load/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,argo-load/yarik-scale-test.yaml,argo-load/scale-test-rollouts.yaml,argo-load/scale-test-rollout-reporter.yaml,argo-load/scale-prod-rollouts.yaml,argo-load/scale-prod-rollout-reporter.yaml}
       recurse: true
     path: resources
     repoURL: >-

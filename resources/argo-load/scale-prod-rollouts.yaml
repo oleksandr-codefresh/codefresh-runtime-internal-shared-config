@@ -19,7 +19,7 @@ spec:
         controller:
           resources:
             limits:
-              cpu: "2"
+              cpu: "1"
               memory: 2Gi
   destination:
     namespace: default

@@ -9,6 +9,9 @@ gitops-runtime:
         tag: v1.8.0-cap-CR-19893
   argo-cd:
     server:
+      image:
+        name: docker.io/xeonalex/personal-argocd-dev
+        tag: 2.8.1-parrallel-events-5
       service:
         type: LoadBalancer
   global:

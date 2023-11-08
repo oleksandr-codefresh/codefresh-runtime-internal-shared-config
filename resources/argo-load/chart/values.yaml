@@ -7,6 +7,10 @@ gitops-runtime:
     global:
       image:
         tag: v1.8.0-cap-CR-19893
+  argo-cd:
+    server:
+      service:
+        type: LoadBalancer
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad

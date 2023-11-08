@@ -9,9 +9,9 @@ gitops-runtime:
         tag: v1.8.0-cap-CR-19893
   argo-cd:
     repoServer:
-      replicas: 1
+      replicas: 0
     controller:
-      replicas: 1
+      replicas: 0
       resources:
         requests:
           cpu: "3"

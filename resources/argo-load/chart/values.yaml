@@ -8,8 +8,6 @@ gitops-runtime:
       image:
         tag: v1.8.0-cap-CR-19893
   argo-cd:
-    redis:
-      replicas: 0
     repoServer:
       replicas: 0
     controller:

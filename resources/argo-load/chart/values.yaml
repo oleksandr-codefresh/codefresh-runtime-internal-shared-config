@@ -1,26 +1,26 @@
 gitops-runtime:
-  event-reporters:
-    events:
-      argoCDServerServiceName: "5.tcp.eu.ngrok.io"
-      argoCDServerServicePort: "16277"
+  # event-reporters:
+  #   events:
+  #     argoCDServerServiceName: "5.tcp.eu.ngrok.io"
+  #     argoCDServerServicePort: "16277"
   argo-events:
     global:
       image:
         tag: v1.8.0-cap-CR-19893
   argo-cd:
     repoServer:
-      replicas: 0
+      replicas: 1
     controller:
-      replicas: 0
+      replicas: 1
       resources:
         requests:
           cpu: "3"
           memory: "4Gi"
     server:
-      replicas: 0
+      replicas: 1
       image:
         repository: docker.io/xeonalex/personal-argocd-dev
-        tag: 2.8.1-parrallel-events-11
+        tag: 2.8.1-parrallel-events-12
       service:
         type: LoadBalancer
   global:

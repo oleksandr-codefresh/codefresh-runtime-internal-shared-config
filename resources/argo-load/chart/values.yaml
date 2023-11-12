@@ -20,7 +20,7 @@ gitops-runtime:
       replicas: 1
       image:
         repository: docker.io/xeonalex/personal-argocd-dev
-        tag: 2.8.1-parrallel-events-20
+        tag: 2.8.1-parrallel-events-21
       service:
         type: LoadBalancer
   global:

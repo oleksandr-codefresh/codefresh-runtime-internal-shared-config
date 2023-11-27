@@ -20,7 +20,7 @@ gitops-runtime:
       replicas: 1
       image:
         repository: docker.io/xeonalex/personal-argocd-dev
-        tag: reporting-v2-test-v10
+        tag: reporting-v2-test-v17
       service:
         type: LoadBalancer
   global:

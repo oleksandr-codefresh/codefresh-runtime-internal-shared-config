@@ -25,6 +25,10 @@ gitops-runtime:
       replicas: 3
       service:
         type: LoadBalancer
+      resources:
+        requests:
+          cpu: "1"
+          memory: "1Gi"
     eventReporter:
       enabled: true
       version: v2

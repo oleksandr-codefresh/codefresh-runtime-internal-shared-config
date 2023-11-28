@@ -3,10 +3,10 @@ gitops-runtime:
   #   events:
   #     argoCDServerServiceName: "5.tcp.eu.ngrok.io"
   #     argoCDServerServicePort: "16277"
-  argo-events:
-    global:
-      image:
-        tag: v1.8.0-cap-CR-19893
+  # argo-events:
+  #   global:
+  #     image:
+  #       tag: v1.8.0-cap-CR-19893
   argo-cd:
     repoServer:
       replicas: 1
@@ -17,12 +17,19 @@ gitops-runtime:
           cpu: "3"
           memory: "4Gi"
     server:
-      replicas: 1
-      image:
-        repository: docker.io/xeonalex/personal-argocd-dev
-        tag: reporting-v2-test-v20
+      replicas: 3
       service:
         type: LoadBalancer
+    eventReporter:
+      enabled: true
+      version: v2
+      replicas: 5
+      metrics:
+        enabled: true
+    configs:
+      params:
+        controller.status.processors: "25"
+        controller.operation.processors: "15"
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad

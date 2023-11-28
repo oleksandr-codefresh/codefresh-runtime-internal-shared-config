@@ -16,7 +16,7 @@ gitops-runtime:
           memory: "2Gi"
 
     controller:
-      replicas: 1
+      replicas: 2
       resources:
         requests:
           cpu: "3"

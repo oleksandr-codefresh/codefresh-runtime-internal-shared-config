@@ -10,6 +10,11 @@ gitops-runtime:
   argo-cd:
     repoServer:
       replicas: 1
+      resources:
+        requests:
+          cpu: "2"
+          memory: "2Gi"
+
     controller:
       replicas: 1
       resources:

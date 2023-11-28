@@ -35,6 +35,10 @@ gitops-runtime:
       replicas: 5
       metrics:
         enabled: true
+      resources:
+        requests:
+          cpu: "0.5"
+          memory: "400Mi"
     configs:
       params:
         controller.status.processors: "25"

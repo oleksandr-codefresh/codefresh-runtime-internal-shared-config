@@ -39,8 +39,8 @@ gitops-runtime:
       metrics:
         enabled: true
       env:
-        - name: USE_GRPC
-          value: false
+        - name: "USE_GRPC"
+          value: "false"
       resources:
         requests:
           cpu: "0.2"

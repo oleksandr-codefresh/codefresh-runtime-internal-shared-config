@@ -33,6 +33,9 @@ gitops-runtime:
       enabled: true
       version: v2
       replicas: 10
+      image:
+        tag: 2.8.1-multiple-transports
+        repo: docker.io/xeonalex/personal-argocd-dev:
       metrics:
         enabled: true
       resources:

@@ -38,6 +38,8 @@ gitops-runtime:
         repository: docker.io/xeonalex/personal-argocd-dev
       metrics:
         enabled: true
+      env:
+        USE_GRPC: false
       resources:
         requests:
           cpu: "0.2"

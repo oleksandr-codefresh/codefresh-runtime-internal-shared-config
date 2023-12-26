@@ -33,13 +33,13 @@ gitops-runtime:
       enabled: true
       version: v2
       replicas: 10
-      image:
-        tag: v2.8-2023.12.13-3973ffbbd
+      # image:
+      #   tag: v2.8-2023.12.13-3973ffbbd
       metrics:
         enabled: true
-      env:
-        - name: "USE_GRPC"
-          value: "false"
+      # env:
+      #   - name: "USE_GRPC"
+      #     value: "false"
       resources:
         requests:
           cpu: "0.2"

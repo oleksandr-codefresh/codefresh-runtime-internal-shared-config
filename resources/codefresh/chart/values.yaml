@@ -56,4 +56,4 @@ gitops-runtime:
           name: codefresh-user-token
           key: token
     runtime:
-      name: argo-load
+      name: codefresh

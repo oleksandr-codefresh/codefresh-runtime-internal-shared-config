@@ -1,4 +1,53 @@
 gitops-runtime:
+  # event-reporters:
+  #   events:
+  #     argoCDServerServiceName: "5.tcp.eu.ngrok.io"
+  #     argoCDServerServicePort: "16277"
+  # argo-events:
+  #   global:
+  #     image:
+  #       tag: v1.8.0-cap-CR-19893
+  argo-cd:
+    repoServer:
+      replicas: 2
+      resources:
+        requests:
+          cpu: "1"
+          memory: "200Mi"
+
+    controller:
+      replicas: 2
+      resources:
+        requests:
+          cpu: "3"
+          memory: "4Gi"
+    server:
+      replicas: 3
+      service:
+        type: LoadBalancer
+      resources:
+        requests:
+          cpu: "0.3"
+          memory: "400Mi"
+    eventReporter:
+      enabled: true
+      version: v2
+      replicas: 10
+      image:
+        tag: v2.9-2023.12.28-a52e719a5
+      metrics:
+        enabled: true
+      # env:
+      #   - name: "USE_GRPC"
+      #     value: "false"
+      resources:
+        requests:
+          cpu: "0.2"
+          memory: "200Mi"
+    configs:
+      params:
+        controller.status.processors: "25"
+        controller.operation.processors: "15"
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad
@@ -7,4 +56,4 @@ gitops-runtime:
           name: codefresh-user-token
           key: token
     runtime:
-      name: codefresh
+      name: argo-load

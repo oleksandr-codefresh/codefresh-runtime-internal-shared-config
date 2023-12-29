@@ -34,7 +34,7 @@ gitops-runtime:
       version: v2
       replicas: 10
       image:
-        tag: v2.9-2023.12.22-f5398c630
+        tag: v2.9-2023.12.26-47086b8e8
       metrics:
         enabled: true
       # env:

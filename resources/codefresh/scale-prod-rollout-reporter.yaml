@@ -92,7 +92,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Sensor
 metadata:
-  name: scale-prod-rollout-reporter
+  name: scale-prod-rollout-reporter-2
   labels:
     app.kubernetes.io/managed-by: cf
 spec:

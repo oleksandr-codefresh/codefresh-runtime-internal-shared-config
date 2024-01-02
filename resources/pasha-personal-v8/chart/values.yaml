@@ -1,0 +1,17 @@
+gitops-runtime:
+  argo-cd:
+    eventReporter:
+      enabled: true
+      image:
+        tag: v2.9-2023.12.28-a52e719a5
+      replicas: 3
+      version: v2
+  global:
+    codefresh:
+      accountId: 61289cb0432d871402610bad
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      name: pasha-personal-v8

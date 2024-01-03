@@ -10,7 +10,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/yaroslav-codefresh/scale-test.git
+    repoURL: https://github.com/pasha-codefresh/scale-test.git
     path: gs-apps
     targetRevision: main
     directory:

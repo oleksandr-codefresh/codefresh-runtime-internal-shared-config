@@ -53,7 +53,7 @@ gitops-runtime:
     configs:
       cm:
         timeout:
-          reconciliation: 30s
+          reconciliation: 5s
       params:
         controller.status.processors: "25"
         controller.operation.processors: "15"

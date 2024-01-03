@@ -33,11 +33,17 @@ gitops-runtime:
       enabled: true
       version: v2
       replicas: 10
-      image:
-        tag: v2.9-2023.12.28-a52e719a5
+      # image:
+      #   tag: v2.9-2023.12.28-a52e719a5
       metrics:
         enabled: true
-      # env:
+      env:
+      - name: ARGOCD_SERVER_ROOTPATH
+        valueFrom:
+          configMapKeyRef:
+            name: argocd-cmd-params-cm
+            key: server.rootpath
+            optional: true
       #   - name: "USE_GRPC"
       #     value: "false"
       resources:

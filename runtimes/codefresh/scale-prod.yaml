@@ -6,16 +6,16 @@ metadata:
   labels:
     codefresh.io/entity: internal-config
     codefresh.io/internal: 'true'
-  name: in-cluster
+  name: scale-prod
 spec:
   destination:
-    namespace: codefresh
-    server: https://kubernetes.default.svc
+    namespace: default
+    server: https://403E08D8DDCCFB612E8E5EB57670660E.gr7.us-east-1.eks.amazonaws.com
   project: default
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh/*.yaml,runtimes/codefresh/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh/cf-gitops-runtime.yaml,codefresh/yarik-scale-test.yaml,codefresh/scale-prod-rollouts.yaml,codefresh/scale-prod-rollout-reporter.yaml,codefresh/infra.yaml}
+        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh/*.yaml,runtimes/codefresh/**/*.yaml,codefresh-managed-cluster-scale-prod-cm.yaml}
       recurse: true
     path: resources
     repoURL: >-

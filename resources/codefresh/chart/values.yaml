@@ -21,6 +21,8 @@ gitops-runtime:
         requests:
           cpu: "3"
           memory: "4Gi"
+      image:
+        tag: v2.8.1-cap-CR-create-apps-with-err
     server:
       replicas: 3
       service:

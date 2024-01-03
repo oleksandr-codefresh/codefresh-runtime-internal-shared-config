@@ -55,7 +55,7 @@ gitops-runtime:
         timeout:
           reconciliation: 5s
       params:
-        controller.status.processors: "25"
+        controller.status.processors: "50"
         controller.operation.processors: "15"
   global:
     codefresh:

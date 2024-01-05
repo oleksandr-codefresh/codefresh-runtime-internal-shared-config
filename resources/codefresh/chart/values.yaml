@@ -54,9 +54,9 @@ gitops-runtime:
           memory: "200Mi"
     configs:
       cm:
-        timeout.reconciliation: 60s
+        timeout.reconciliation: 10s
       params:
-        controller.status.processors: "1"
+        controller.status.processors: "50"
         controller.operation.processors: "50"
   global:
     codefresh:

@@ -54,7 +54,7 @@ gitops-runtime:
           memory: "200Mi"
     configs:
       cm:
-        timeout.reconciliation: 10s
+        timeout.reconciliation: 20s
       params:
         controller.status.processors: "50"
         controller.operation.processors: "50"

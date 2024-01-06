@@ -19,7 +19,7 @@ gitops-runtime:
       replicas: 1
       resources:
         requests:
-          cpu: "4"
+          cpu: "3"
           memory: "8Gi"
       image:
         tag: v2.8.1-cap-CR-create-apps-with-err

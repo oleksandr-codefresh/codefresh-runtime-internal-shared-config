@@ -55,13 +55,14 @@ gitops-runtime:
     configs:
       cm:
         timeout.reconciliation: 180s
+        resource.ignoreResourceUpdatesEnabled: true
+        resource.compareoptions: |
+          ignoreDifferencesOnResourceUpdates: true
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"
         #controller.self.heal.timeout.seconds: 360
-        resource.ignoreResourceUpdatesEnabled: true
-        resource.compareoptions: |
-          ignoreDifferencesOnResourceUpdates: true
+
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad

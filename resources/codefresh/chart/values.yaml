@@ -58,7 +58,9 @@ gitops-runtime:
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"
-        controller.self.heal.timeout.seconds: 360
+        #controller.self.heal.timeout.seconds: 360
+        resource.compareoptions: |
+          ignoreDifferencesOnResourceUpdates: true
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad

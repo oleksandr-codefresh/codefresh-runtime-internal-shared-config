@@ -60,7 +60,7 @@ gitops-runtime:
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"
-        controller.log,level: "debug"
+        controller.log.level: "debug"
         #controller.self.heal.timeout.seconds: 360
 
   global:

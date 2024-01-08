@@ -55,7 +55,6 @@ gitops-runtime:
     configs:
       cm:
         timeout.reconciliation: 180s
-        resource.ignoreResourceUpdatesEnabled: true
         resource.compareoptions: |
           ignoreDifferencesOnResourceUpdates: true
       params:

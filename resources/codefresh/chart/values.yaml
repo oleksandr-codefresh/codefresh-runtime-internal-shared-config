@@ -23,6 +23,9 @@ gitops-runtime:
           memory: "8Gi"
       image:
         tag: v2.8.1-cap-CR-create-apps-with-err
+      env:
+        name: ARGOCD_APPLICATION_CONTROLLER_LOGLEVEL
+        value: "debug"
     server:
       replicas: 3
       service:

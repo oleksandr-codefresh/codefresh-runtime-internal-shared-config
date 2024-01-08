@@ -58,8 +58,8 @@ gitops-runtime:
     configs:
       cm:
         timeout.reconciliation: 180s
-        resource.compareoptions: |
-          ignoreDifferencesOnResourceUpdates: true
+#        resource.compareoptions: |
+#          ignoreDifferencesOnResourceUpdates: true
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"

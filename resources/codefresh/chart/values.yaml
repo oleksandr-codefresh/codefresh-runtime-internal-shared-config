@@ -58,7 +58,7 @@ gitops-runtime:
         resource.ignoreResourceUpdatesEnabled: true
         resource.compareoptions: |
         ignoreDifferencesOnResourceUpdates: true
-        resource.customizations.ignoreResourceUpdates.apps_Deployment: |
+        resource.customizations.ignoreDifferences.apps_Deployment: |
           jsonPointers:
           - /spec/replicas
           - /status

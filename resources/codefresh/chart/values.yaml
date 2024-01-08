@@ -61,6 +61,7 @@ gitops-runtime:
         resource.customizations.ignoreResourceUpdates.apps_Deployment: |
           jsonPointers:
           - /spec/replicas
+          - /status
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"

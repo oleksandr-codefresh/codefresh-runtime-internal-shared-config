@@ -58,7 +58,7 @@ gitops-runtime:
 #        resource.ignoreResourceUpdatesEnabled: true
         resource.customizations.ignoreDifferences.Service: |
           jsonPointers:
-          - /spec/progressDeadlineSeconds
+          - /spec/sessionAffinity
           - /status
 #        resource.compareoptions: |
 #          ignoreDifferencesOnResourceUpdates: true

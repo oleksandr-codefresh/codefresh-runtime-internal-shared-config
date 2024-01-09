@@ -55,13 +55,13 @@ gitops-runtime:
     configs:
       cm:
         timeout.reconciliation: 180s
-        resource.ignoreResourceUpdatesEnabled: true
+#        resource.ignoreResourceUpdatesEnabled: true
         resource.customizations.ignoreDifferences.argoproj.io_Rollout: |
           jsonPointers:
-          - /spec/replicas
+          - /spec/progressDeadlineSeconds
           - /status
-        resource.compareoptions: |
-          ignoreDifferencesOnResourceUpdates: true
+#        resource.compareoptions: |
+#          ignoreDifferencesOnResourceUpdates: true
       params:
         controller.status.processors: "70"
         controller.operation.processors: "50"

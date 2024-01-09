@@ -56,7 +56,7 @@ gitops-runtime:
       cm:
         timeout.reconciliation: 180s
 #        resource.ignoreResourceUpdatesEnabled: true
-        resource.customizations.ignoreDifferences.argoproj.io_Rollout: |
+        resource.customizations.ignoreDifferences.Service: |
           jsonPointers:
           - /spec/progressDeadlineSeconds
           - /status

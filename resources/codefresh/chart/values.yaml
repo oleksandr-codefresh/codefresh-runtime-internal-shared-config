@@ -60,10 +60,6 @@ gitops-runtime:
           jsonPointers:
           - /spec/replicas
           - /status
-        resource.customizations.ignoreResourceUpdates.argoproj.io_Rollout: |
-          jsonPointers:
-          - /spec/replicas
-          - /status
         resource.compareoptions: |
           ignoreDifferencesOnResourceUpdates: true
       params:

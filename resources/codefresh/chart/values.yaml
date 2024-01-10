@@ -7,6 +7,8 @@ gitops-runtime:
   #   global:
   #     image:
   #       tag: v1.8.0-cap-CR-19893
+  argo-rollouts:
+    replicas: 0
   argo-cd:
     repoServer:
       replicas: 2

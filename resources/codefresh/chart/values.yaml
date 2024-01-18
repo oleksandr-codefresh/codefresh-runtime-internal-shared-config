@@ -39,7 +39,7 @@ gitops-runtime:
       version: v2
       replicas: 10
       image:
-        tag: v2.9-2024.01.17-0d221227f
+        tag: v2.9-2024.1.17-fd6208b56
       metrics:
         enabled: true
       env:
@@ -49,8 +49,14 @@ gitops-runtime:
             name: argocd-cmd-params-cm
             key: server.rootpath
             optional: true
-      #   - name: "USE_GRPC"
-      #     value: "false"
+      - name: "RATE_LIMITER_LEARNING_MODE_ENABLED"
+        value: "true"
+      - name: "RATE_LIMITER_ENABLED"
+        value: "true"
+      - name: "RATE_LIMITER_BUCKET_SIZE"
+        value: "5"
+      - name: "RATE_LIMITER_DURATION"
+        value: "5m"
       resources:
         requests:
           cpu: "0.2"

@@ -54,7 +54,7 @@ gitops-runtime:
       - name: "RATE_LIMITER_ENABLED"
         value: "true"
       - name: "RATE_LIMITER_BUCKET_SIZE"
-        value: "1"
+        value: "10"
       - name: "RATE_LIMITER_DURATION"
         value: "15m"
       resources:

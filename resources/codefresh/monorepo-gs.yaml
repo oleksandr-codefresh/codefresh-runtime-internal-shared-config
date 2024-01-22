@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/pasha-codefresh/scale-test.git
-    path: monorepo-apps
+    path: monorepo-apps/appsets
     targetRevision: main
     directory:
       include: '*'

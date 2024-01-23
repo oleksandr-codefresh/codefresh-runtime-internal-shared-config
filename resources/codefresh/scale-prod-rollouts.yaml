@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     chart: argo-rollouts
-    repoURL: oci://quay.io/codefresh/charts/dev
+    repoURL: https://codefresh-io.github.io/argo-helm
     targetRevision: 2.32.5-3-analysis-fix
     helm:
       releaseName: argo-rollouts

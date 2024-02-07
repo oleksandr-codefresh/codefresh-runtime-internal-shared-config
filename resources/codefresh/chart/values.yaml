@@ -23,7 +23,20 @@ gitops-runtime:
         requests:
           cpu: "1"
           memory: "200Mi"
-
+      image:
+        tag: v2.9-2024.2.7-2d48b28f4
+      env:
+        - name: ARGOCD_REPO_SERVER_CODEFRESH_URL
+          valueFrom:
+            configMapKeyRef:
+              name: codefresh-cm
+              key: base-url
+              optional: true
+        - name: ARGOCD_REPO_SERVER_CODEFRESH_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: codefresh-token
     controller:
       replicas: 1
       resources:

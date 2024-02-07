@@ -15,7 +15,7 @@ spec:
   source:
     directory:
       include: >-
-        {all-runtimes-all-clusters/*.yaml,all-runtimes-all-clusters/**/*.yaml,runtimes/codefresh/*.yaml,runtimes/codefresh/**/*.yaml,control-planes/*.yaml,control-planes/**/*.yaml,codefresh/cf-gitops-runtime.yaml,codefresh/yarik-scale-test.yaml,codefresh/scale-prod-rollouts.yaml,codefresh/scale-prod-rollout-reporter.yaml,codefresh/infra.yaml,codefresh/monorepo-gs.yaml}
+        {all-runtimes-all-clusters/**/*.yaml,all-runtimes-all-clusters/*.yaml,codefresh/app-version.yaml,codefresh/cf-gitops-runtime.yaml,codefresh/infra.yaml,codefresh/monorepo-gs.yaml,codefresh/scale-prod-rollout-reporter.yaml,codefresh/scale-prod-rollouts.yaml,codefresh/yarik-scale-test.yaml,control-planes/**/*.yaml,control-planes/*.yaml,runtimes/codefresh/**/*.yaml,runtimes/codefresh/*.yaml}
       recurse: true
     path: resources
     repoURL: >-

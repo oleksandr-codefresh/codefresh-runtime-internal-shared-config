@@ -24,7 +24,7 @@ gitops-runtime:
           cpu: "1"
           memory: "200Mi"
       image:
-        tag: v2.9-2024.2.9-2fd6a5c2a
+        tag: v2.9-2024.2.14-58059e8b0
       env:
         - name: ARGOCD_REPO_SERVER_CODEFRESH_URL
           valueFrom:
@@ -44,7 +44,7 @@ gitops-runtime:
           cpu: "3"
           memory: "8Gi"
       image:
-        tag: v2.9-2024.2.9-2fd6a5c2a
+        tag: v2.9-2024.2.14-58059e8b0
     server:
       replicas: 3
       service:
@@ -54,7 +54,7 @@ gitops-runtime:
           cpu: "0.3"
           memory: "400Mi"
       image:
-        tag: v2.9-2024.2.9-2fd6a5c2a
+        tag: v2.9-2024.2.14-58059e8b0
     eventReporter:
       enabled: true
       version: v2

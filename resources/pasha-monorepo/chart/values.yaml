@@ -8,9 +8,9 @@ gitops-runtime:
           key: token
     runtime:
       name: pasha-monorepo
-   argo-cd: 
-      server:
-        image:
-          imagePullPolicy: Always
-        service:
-          type: LoadBalancer   
+  argo-cd: 
+    server:
+      image:
+        imagePullPolicy: Always
+      service:
+        type: LoadBalancer   

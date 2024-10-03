@@ -16,3 +16,5 @@ gitops-runtime:
         type: LoadBalancer   
     acrController:
        enabled: true
+       image: 
+         tag: v2.12-2024.9.30-a87492b22

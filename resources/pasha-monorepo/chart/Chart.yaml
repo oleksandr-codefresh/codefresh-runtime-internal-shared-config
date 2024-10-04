@@ -6,4 +6,4 @@ version: 0.12.0
 dependencies:
   - name: gitops-runtime
     repository: oci://quay.io/codefresh/dev
-    version: 0.0.0-fix-monorepo-controller-extra-env-608cdd5
+    version: 0.13.0

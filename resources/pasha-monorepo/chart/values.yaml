@@ -21,3 +21,5 @@ gitops-runtime:
        # env:
        # - name: "ARGOCD_SERVER"
        #   value: "argo-cd-server:80"
+    notifications:
+       enabled: true

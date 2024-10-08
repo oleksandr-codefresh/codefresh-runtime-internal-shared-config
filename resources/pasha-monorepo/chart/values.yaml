@@ -16,10 +16,5 @@ gitops-runtime:
         type: LoadBalancer   
     acrController:
        enabled: true
-       image: 
-         tag: v2.12-2024.9.30-a87492b22
-       env:
-       - name: "ARGOCD_SERVER"
-         value: "argo-cd-server:80"
     notifications:
        enabled: true

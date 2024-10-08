@@ -18,3 +18,5 @@ gitops-runtime:
        enabled: true
     notifications:
        enabled: true
+    applicationSet:
+       enabled: false

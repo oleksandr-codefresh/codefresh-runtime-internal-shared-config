@@ -19,4 +19,4 @@ gitops-runtime:
     notifications:
        enabled: true
     applicationSet:
-       replicas: 0
+       replicas: 1

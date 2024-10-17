@@ -9,13 +9,25 @@ gitops-runtime:
     runtime:
       name: pasha-monorepo
   argo-cd: 
+    repoServer:
+      image:
+        imagePullPolicy: Always
+        tag: v2.12-2024.10.17-36fb3f0d1
+    controller:
+      image:
+        imagePullPolicy: Always
+        tag: v2.12-2024.10.17-36fb3f0d1
     server:
       image:
         imagePullPolicy: Always
+        tag: v2.12-2024.10.17-36fb3f0d1
       service:
         type: LoadBalancer   
     acrController:
        enabled: true
+       image:
+        imagePullPolicy: Always
+        tag: v2.12-2024.10.17-36fb3f0d1
     notifications:
        enabled: true
     applicationSet:

@@ -1,103 +1,12 @@
 gitops-runtime:
-  app-proxy:
-  #   replicaCount: 0
-  #   config:
-  #     cors: http://local.codefresh.io
-    image:
-      tag: 1.2623.0
-  # event-reporters:
-  #   events:
-  #     argoCDServerServiceName: "5.tcp.eu.ngrok.io"
-  #     argoCDServerServicePort: "16277"
-  # argo-events:
-  #   global:
-  #     image:
-  #       tag: v1.8.0-cap-CR-19893
-  argo-rollouts:
+  argo-workflows:
     controller:
-      replicas: 0
-  argo-cd:
-    repoServer:
-      replicas: 2
-      resources:
-        requests:
-          cpu: "1"
-          memory: "200Mi"
-      image:
-        tag: v2.9-2024.2.14-58059e8b0
-      env:
-        - name: ARGOCD_REPO_SERVER_CODEFRESH_URL
-          valueFrom:
-            configMapKeyRef:
-              name: codefresh-cm
-              key: base-url
-              optional: true
-        - name: ARGOCD_REPO_SERVER_CODEFRESH_TOKEN
-          valueFrom:
-            secretKeyRef:
-              key: token
-              name: codefresh-token
-    controller:
-      replicas: 1
-      resources:
-        requests:
-          cpu: "3"
-          memory: "8Gi"
-      image:
-        tag: v2.9-2024.2.14-58059e8b0
-    server:
-      replicas: 3
-      service:
-        type: LoadBalancer
-      resources:
-        requests:
-          cpu: "0.3"
-          memory: "400Mi"
-      image:
-        tag: v2.9-2024.2.14-58059e8b0
-    eventReporter:
-      enabled: true
-      version: v2
-      replicas: 10
-      image:
-        tag: v2.9-2024.1.17-fd6208b56
-      metrics:
-        enabled: true
-      env:
-      - name: ARGOCD_SERVER_ROOTPATH
-        valueFrom:
-          configMapKeyRef:
-            name: argocd-cmd-params-cm
-            key: server.rootpath
-            optional: true
-      - name: "RATE_LIMITER_LEARNING_MODE_ENABLED"
-        value: "true"
-      - name: "RATE_LIMITER_ENABLED"
-        value: "true"
-      - name: "RATE_LIMITER_BUCKET_SIZE"
-        value: "10"
-      - name: "RATE_LIMITER_DURATION"
-        value: "15m"
-      resources:
-        requests:
-          cpu: "0.2"
-          memory: "200Mi"
-    configs:
-      cm:
-        timeout.reconciliation: 180s
-#        resource.ignoreResourceUpdatesEnabled: true
-        resource.customizations.ignoreDifferences.Service: |
-          jsonPointers:
-          - /spec/sessionAffinity
-          - /status
-#        resource.compareoptions: |
-#          ignoreDifferencesOnResourceUpdates: true
-      params:
-        controller.status.processors: "70"
-        controller.operation.processors: "50"
-        controller.log.level: "debug"
-        # controller.self.heal.timeout.seconds: 360
-
+      workflowDefaults:
+        spec:
+          archiveLogs: true
+          artifactRepositoryRef:
+            configMap: codefresh-workflows-log-store
+            key: codefresh-workflows-log-store
   global:
     codefresh:
       accountId: 61289cb0432d871402610bad

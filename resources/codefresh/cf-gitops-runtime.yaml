@@ -2,11 +2,15 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: cf-gitops-runtime
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    argocd.argoproj.io/compare-options: ServerSideDiff=true 
   labels:
     codefresh.io/entity: runtime
     codefresh.io/internal: 'true'
 spec:
-  project: default
+  project: cf-runtime-app-project
   source:
     repoURL: https://github.com/oleksandr-codefresh/codefresh-runtime-internal-shared-config.git
     targetRevision: HEAD
@@ -14,10 +18,12 @@ spec:
     helm:
       releaseName: cf-gitops-runtime
   destination:
-    namespace: codefresh
+    namespace: cf-runtime
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       allowEmpty: true
       prune: true
       selfHeal: true
+    syncOptions:
+      - ServerSideApply=true
